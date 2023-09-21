@@ -42,6 +42,14 @@ public class Gerardo {
         System.out.println( c3.modelo );
         System.out.println( c3.color );
         System.out.println( c3.anio );
+        
+        //pruebas
+        Producto p1 = new Producto("P0001", "Coca Cola 3LT", "Coca Cola", 15, false);
+        System.out.println( p1.nombre );
+        System.out.println( p1.codigo );
+        System.out.println( p1.fabricante );
+        System.out.println( p1.importado );
+        System.out.println( p1.existencias );
     }
     
 }
