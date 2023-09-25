@@ -50,6 +50,14 @@ public class Gerardo {
         System.out.println( p1.fabricante );
         System.out.println( p1.importado );
         System.out.println( p1.existencias );
+        
+        Persona pe1 = new Persona("Gerardo", 40, 'M', "SPS", true);
+        pe1.imprimir();
+        pe1.saludar(true);
+        pe1.saludar(false);
+        
+        Persona pe2 = new Persona("Filomeno Colinas", 'M');
+        pe2.imprimir();
     }
     
 }
