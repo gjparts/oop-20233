@@ -51,13 +51,19 @@ public class Gerardo {
         System.out.println( p1.importado );
         System.out.println( p1.existencias );
         
-        Persona pe1 = new Persona("Gerardo", 40, 'M', "SPS", true);
+        Persona pe1 = new Persona("Gerardo", 40, 'O', "SPS", true);
+        pe1.setGenero('M');
         pe1.imprimir();
         pe1.saludar(true);
         pe1.saludar(false);
         
         Persona pe2 = new Persona("Filomeno Colinas", 'M');
         pe2.imprimir();
+        System.out.println("El genero de pe2 es "+pe2.getGenero());
+        
+        Persona pe3 = new Persona("Kurco Bain", 25, 'M', "Seatle", false);
+        System.out.println("La edad de pe3 es "+pe3.getEdad());
+        System.out.println("El genero de pe3 es "+pe3.getGenero());
     }
     
 }

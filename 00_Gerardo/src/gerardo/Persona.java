@@ -8,15 +8,15 @@ package gerardo;
 public class Persona {
     //atributos
     public String nombre;
-    public int edad;
-    public char genero;
+    private int edad;
+    private char genero;
     public String ciudad;
     public boolean trabaja;
     //constructores
     public Persona(String nombre, char genero){
         this.nombre = nombre;
-        this.genero = genero;
-        this.edad = 0;
+        this.setGenero(genero); //escribir el atributo por medio de su set
+        this.setEdad(0); //escribir el atributo por medio de su set
         this.ciudad = "No definida";
         this.trabaja = false;
     }
@@ -25,7 +25,7 @@ public class Persona {
         //reutilizar constructor de dos parametros
         this(nombre, genero);
         //llenar los otros atributos
-        this.edad = edad;
+        this.setEdad(edad); //escribir el atributo por medio de su set
         this.ciudad = ciudad;
         this.trabaja = trabaja;
     }
@@ -53,4 +53,41 @@ public class Persona {
     public void saludar(boolean enIngles){
         System.out.println( ( enIngles == true ? "Hi " : "Hola " )+this.nombre );
     }
+    /**
+     * Establece el genero de la persona
+     * @param genero solo se permite M, F, O (mayusculas)
+     */
+    public void setGenero(char genero){
+        //validacion del dato enviado
+        if( genero == 'M' || genero == 'F' || genero == 'O' )
+            this.genero = genero; //se acepta
+        else
+            throw new IllegalArgumentException("Genero debe ser M, F, O");
+    }
+    /**
+     * Devuelve el genero de la persona
+     * @return un valor char
+     */
+    public char getGenero(){
+        return this.genero;
+    }
+    /**
+     * Establece la edad de la persona
+     * @param edad un entero entre 0 y 150
+     */
+    public void setEdad(int edad){
+        if( edad >= 0 && edad <= 150 )
+            this.edad = edad; //se acepta
+        else
+            throw new IllegalArgumentException("Edad debe ser entre 0 y 150");
+    }
+    /**
+     * Devuelve la edad de la persona
+     * @return un numero entero
+     */
+    public int getEdad(){
+        return this.edad;
+    }
 }
+
+
