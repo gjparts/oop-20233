@@ -64,6 +64,14 @@ public class Gerardo {
         Persona pe3 = new Persona("Kurco Bain", 25, 'M', "Seatle", false);
         System.out.println("La edad de pe3 es "+pe3.getEdad());
         System.out.println("El genero de pe3 es "+pe3.getGenero());
+        
+        Empleado e1 = new Empleado("Gerardo",40);
+        e1.setGenero('M');
+        e1.imprimir();
+        
+        Empleado e2 = new Empleado("Estevancito Maravilla", 70,
+                            'M', 'C', 'P', 40000);
+        e2.imprimir();
     }
     
 }
