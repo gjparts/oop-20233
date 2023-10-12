@@ -67,5 +67,20 @@ public class Smartphone {
         System.out.println("Bateria: ");
         System.out.println("\tMarca:"+this.bateria.getMarca().nombre);
         System.out.println("\tMiliamperios: "+this.bateria.miliAmperios);
+        //imprimir lo chips (los cuales son opcionales)
+        System.out.print("Chip 1: ");
+        if( this.chip1 == null )
+            System.out.println("No tiene");
+        else{
+            System.out.println("\n\tOperador: "+this.chip1.getProveedor().nombre);
+            System.out.println("\tNumero: "+this.chip1.numeroTelefonico);
+        }
+        System.out.print("Chip 2: ");
+        if( this.chip2 == null )
+            System.out.println("No tiene");
+        else{
+            System.out.println("\n\tOperador: "+this.chip2.getProveedor().nombre);
+            System.out.println("\tNumero: "+this.chip2.numeroTelefonico);
+        }
     }
 }
