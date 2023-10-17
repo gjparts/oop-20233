@@ -5,17 +5,18 @@ package pkg03_factura;
  * @author Gerardo Portillo
  */
 import java.util.Calendar;  //clase para el manejo de fechas
+import java.text.SimpleDateFormat; //clase para dar formato a fecha
 public class Factura {
     //atributos
     public int numero;
-    public String fecha;
+    public Calendar fecha;
     public Cliente cliente;
     private Producto producto1;
     public Producto producto2;
     public Producto producto3;
     public Producto producto4;
     //constructor
-    public Factura(int numero, String fecha, Cliente cliente, Producto producto1){
+    public Factura(int numero, Calendar fecha, Cliente cliente, Producto producto1){
         //producto1 es obligatorio
         if( producto1 == null )
             throw new IllegalArgumentException("producto1 no puede ser null");
@@ -49,7 +50,15 @@ public class Factura {
         
         System.out.println("********** Factura **********");
         System.out.println("Numero: "+this.numero);
-        System.out.println("Fecha: "+this.fecha);
+        
+        System.out.print("Fecha: ");
+        if( this.fecha == null )
+            System.out.println("No tiene");
+        else{
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss a");
+            System.out.println( formato.format(this.fecha.getTime()) );
+        }
+        
         //si cliente es null entonces es consumidor final y no imprimir rtn
         //si cliente no es null imprimir nombre del cliente y su rtn
         System.out.print("Cliente: ");
