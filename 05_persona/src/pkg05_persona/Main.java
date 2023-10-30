@@ -46,5 +46,23 @@ public class Main {
         p4.diplomas.push( di1 );
         p4.imprimir();
         
+        Persona p5 = new Persona("1","Zeus",1111111);
+        Persona p6 = new Persona("2","Hera",2222222);
+        Persona p7 = new Persona("3","Ares",3333333);
+        Persona p8 = new Persona("4","Atenea",444444);
+        
+        p5.conyuge = p6;
+        p5.hijos.push(p7);
+        p5.hijos.push(p8);
+        p5.hijos.push( new Persona("5","Hercules",564564) );
+        p5.imprimir();
+        
+        p6.conyuge = p5;
+        p6.hijos = p5.hijos;
+        p6.imprimir();
+        
+        p6.hijos.push( new Persona("6","Perseo",32132143) );
+        p6.imprimir();
+        p5.imprimir();
     }
 }

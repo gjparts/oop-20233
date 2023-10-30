@@ -13,7 +13,12 @@ public class Persona {
     public Empresa empresaLabora;
     public Mascota[] mascotas; //multiplicidad, arreglo de Mascota
     public LinkedList<Diploma> diplomas; //multiplicidad, lista vinculada de objetos Diploma    
+    //clase con atributos de la misma clase es referencia circular
+    //sigue siendo asociacion, en este caso agregacion.
+    public Persona conyuge;
+    public LinkedList<Persona> hijos; //multiplicidad
     //constructor
+    
     public Persona(String identidad, String nombre, int telefono) {
         this.identidad = identidad;
         this.nombre = nombre;
@@ -24,6 +29,8 @@ public class Persona {
         //inicializar la lista vinculada para los diplomas
         //asi ya esta lista para su uso
         this.diplomas = new LinkedList();
+        this.conyuge = null;
+        this.hijos = new LinkedList();
     }
     //metodos
     public void imprimir(){
@@ -83,6 +90,34 @@ public class Persona {
                     if( this.diplomas.get(i) != null ){
                         System.out.println("\tInstitucion: "+this.diplomas.get(i).institucion);
                         System.out.println("\tNombre: "+this.diplomas.get(i).nombre);
+                        System.out.println();
+                    }
+                }
+            }
+        }
+        
+        //imprimir los datos del conyuge
+        System.out.print("Conyuge: ");
+        if( conyuge == null )
+            System.out.println("No tiene");
+        else{
+            System.out.println(this.conyuge.nombre);
+            System.out.println("\tIdentidad: "+this.conyuge.identidad);
+            System.out.println("\tTelefono: "+this.conyuge.telefono);
+        }
+        
+        //imprimir el LinkedList de hijos
+        System.out.println("Hijos: ************");
+        if( this.hijos == null )
+            System.out.println("\tNo tiene hijos");
+        else{
+            if( this.hijos.size() == 0 )
+                System.out.println("\tNo tiene hijos");
+            else{
+                //si hay hijos, recorrerlos e imprimir los que no sean null
+                for( int i = 0; i < this.hijos.size(); i++ ){
+                    if( this.hijos.get(i) != null ){
+                        System.out.println("\tNombre: "+this.hijos.get(i).nombre);
                         System.out.println();
                     }
                 }

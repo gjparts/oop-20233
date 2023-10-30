@@ -9,6 +9,7 @@ public class Barrio {
     public String nombre;
     public String zona;
     public String codigoPostal;
+
     //constructor
     public Barrio(String nombre, String zona, String codigoPostal) {
         this.nombre = nombre;
