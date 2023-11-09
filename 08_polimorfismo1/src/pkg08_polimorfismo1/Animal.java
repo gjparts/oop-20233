@@ -28,4 +28,7 @@ public class Animal {
     public void hablar(){
         System.out.println(this.nombre+" se comunica.");
     }
+    public String getEspecie(){
+        return this.especie;
+    }
 }

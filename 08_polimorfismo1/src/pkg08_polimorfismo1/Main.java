@@ -21,8 +21,15 @@ public class Main {
         a1.hablar();
         
         Gato g1 = new Gato("Misifus", true, true, 4);
-        g1.hablar();
         g1.imprimir();
+        g1.hablar();
+        g1.ronronear();
+        
+        Perro p1 = new Perro("Firulais",true, true, 4, "Mixto");
+        p1.imprimir();
+        p1.hablar();
+        p1.jugar();
+        p1.analizar();
     }
     
 }
