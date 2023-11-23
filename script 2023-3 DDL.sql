@@ -7,7 +7,7 @@ GO*/
 --seleccionar la base de datos
 USE Gerardo
 GO
---CREAR UNA TABLA
+--CREAR UNA TABLA (DDL)
 CREATE TABLE Producto(
 	ProductoID bigint NOT NULL IDENTITY(1,1),
 	Nombre VARCHAR(150) NOT NULL,
@@ -18,4 +18,25 @@ CREATE TABLE Producto(
 	Comentarios TEXT NULL,
 	PRIMARY KEY(ProductoID)
 )
+PRINT 'Tabla Producto Creada' 
+GO
+
+--BORRAR UNA TABLA (DLL)
+/*DROP TABLE Producto
+GO*/
+
+--Agregar una columna a la tabla (DDL)
+ALTER TABLE Producto
+ADD algo bigint NULL
+GO
+
+--Eliminar una columna de la tabla (DDL)
+ALTER TABLE Producto
+DROP COLUMN algo
+GO
+
+--Cambiar las especificaciones de una columna (DDL)
+--nombre pasa de tener 150 a 200 char
+ALTER TABLE Producto
+ALTER COLUMN Nombre VARCHAR(200) NOT NULL
 GO
