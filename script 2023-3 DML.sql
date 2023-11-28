@@ -61,6 +61,14 @@ FROM Producto
 SELECT Codigo+' '+Nombre as Descripcion, Costo, PrecioVenta
 FROM Producto
 
+--sumar un NULL devuelve NULL:
+SELECT ProductoID, Nombre+': '+CAST(Comentarios as VARCHAR(255))
+FROM Producto
+
+--evitar que al sumar un NULL devuelva NULL:
+SELECT ProductoID, Nombre+': '+ISNULL( CAST(Comentarios as VARCHAR(255)), 'No tiene coment.')
+FROM Producto
+
 --uso del WHERE (condiciona el resultado del SELECT)
 SELECT *
 FROM Producto
@@ -97,7 +105,11 @@ SELECT *
 FROM Producto
 WHERE Nombre LIKE '%col%' AND Costo <= 100
 
---DELETE
+SELECT *
+FROM Producto
+WHERE Codigo = 'CC01' OR Codigo = 'CC02'
+
+--DELETE (DML)
 --Borrar todos los registros de la tabla
 DELETE FROM Producto
 --Borrar registros condicionando con WHERE
@@ -111,3 +123,45 @@ WHERE Comentarios IS NULL
 --eliminar todos los productos cuyo comentario NO sea NULL
 DELETE FROM Producto
 WHERE Comentarios IS NOT NULL
+
+USE Gerardo
+GO
+
+--UPDATE (DML)
+--actualiza la informacion de uno o mas registros
+--si se usa sin WHERE cambia todos los registros de la tabla:
+UPDATE Producto
+SET Comentarios = NULL
+
+UPDATE Producto
+SET Comentarios = 'Pongale mas chicharron'
+WHERE ProductoID = 42
+
+UPDATE Producto
+SET Existencia = 0
+WHERE PrecioVenta <= 10 AND Costo <= 5
+
+--un update tambien puede ser incremental o decremental:
+--sumar 10 a todas las existencias de todos los productos
+UPDATE Producto
+SET Existencia = Existencia + 10
+
+--aumentar el precio de venta en un 15% para las coca colas
+UPDATE Producto
+SET PrecioVenta = PrecioVenta*1.15
+WHERE Nombre LIKE '%Cola%'
+
+--no se puede hacer update a un campo identity
+UPDATE Producto
+SET ProductoID = 1
+WHERE ProductoID = 38
+
+--se puede hacer update a mas de un campo a la vez
+UPDATE Producto
+SET Comentarios = 'Mala para la Salud', Existencia = 0
+WHERE Nombre LIKE '%Cola%'
+
+SELECT * FROM Producto
+
+
+
