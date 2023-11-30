@@ -1,0 +1,9 @@
+C:\Users\Gerardo\source\repos\crud_20233\crud_20233\bin\Debug\crud_20233.exe
+C:\Users\Gerardo\source\repos\crud_20233\crud_20233\bin\Debug\crud_20233.pdb
+C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.csproj.AssemblyReference.cache
+C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.Properties.Resources.resources
+C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.csproj.GenerateResource.cache
+C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.csproj.CoreCompileInputs.cache
+C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.exe
+C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.pdb
+C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.Productos.resources
