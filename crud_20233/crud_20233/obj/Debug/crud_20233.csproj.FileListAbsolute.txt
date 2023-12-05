@@ -7,3 +7,4 @@ C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.csproj.
 C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.exe
 C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.pdb
 C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.Productos.resources
+C:\Users\Gerardo\source\repos\crud_20233\crud_20233\obj\Debug\crud_20233.Detalle.resources
