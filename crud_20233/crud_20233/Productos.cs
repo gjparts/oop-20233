@@ -213,5 +213,35 @@ namespace crud_20233
                 }
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //si no hay filas no hace nada
+            if (grid1.RowCount == 0) return;
+
+            //preguntar al usuario si desea eliminar la fila
+            DialogResult opcion;
+            opcion = MessageBox.Show("Desea eliminar la fila?", "Eliminar", MessageBoxButtons.YesNo);
+            if( opcion == DialogResult.Yes)
+            {
+                //hacer la instruccion sql para borrar el registro seleccionado
+                String sql = "DELETE FROM Producto WHERE ProductoID = @1";
+                SqlConnection con = new SqlConnection(Properties.Resources.CadenaConexion);
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@1", grid1.CurrentRow.Cells["ProductoID"].Value);
+
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    cargarDatos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }
